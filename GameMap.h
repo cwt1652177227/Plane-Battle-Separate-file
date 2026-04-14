@@ -1,5 +1,6 @@
 #pragma once
 #include"Player.h"
+#include"BulletMgr.h"
 struct SGameMap
 {
 	SGameMap();
@@ -8,6 +9,7 @@ struct SGameMap
 	//Êý¾ÝäÖÈ¾
 	void render();
 	SPlayer player;
+	SBulletMgr bulletMgr;
 	
 };
 

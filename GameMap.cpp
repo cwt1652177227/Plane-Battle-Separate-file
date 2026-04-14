@@ -1,6 +1,7 @@
-#include "GameMap.h"
 #include"stdafx.h"
+#include "GameMap.h"
 #include"Player.h"
+#include"BulletMgr.h"
 int arrMap[20][20]{
 	0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 	0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,
@@ -68,6 +69,7 @@ void SGameMap::update()
 			player.setPosition(player.nRow, player.nCol);
 		}
 	}
+	
 }
 
 void SGameMap::render()
@@ -88,11 +90,15 @@ void SGameMap::render()
 				}
 			}
 			
+			
 			if (arrMap[i][j] == 0) {
 				cout << "¿Ú";
 			}
 			else if (bDrawPlayer) {
 				cout << "»ú";
+			}
+			else if (i==bulletMgr.bullet.nRow&&j== bulletMgr.bullet.nCol) {
+				cout << "µ¯";
 			}
 			else if (arrMap[i][j] == 1) {
 				cout << "  ";
