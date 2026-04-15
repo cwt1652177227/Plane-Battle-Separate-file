@@ -1,7 +1,9 @@
 #include "BulletMgr.h"
 
-SBulletMgr::SBulletMgr()
+void SBulletMgr::addBullet(int nRow, int nCol)
 {
-	bullet.nRow = 7;
-	bullet.nCol = 6;
+	bullet.nRow = nRow;
+	bullet.nCol = nCol;
+	//¥Ê»Î»›∆˜÷–
+	vecBullet.push_back(bullet);
 }

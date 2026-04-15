@@ -69,6 +69,10 @@ void SGameMap::update()
 			player.setPosition(player.nRow, player.nCol);
 		}
 	}
+	else if (KEY_DOWN(VK_SPACE))
+	{
+		bulletMgr.addBullet(player.nRow, player.nCol);
+	}
 	
 }
 
@@ -89,7 +93,13 @@ void SGameMap::render()
 					break;
 				}
 			}
-			
+			//»­×Óµ¯
+			bool bDrawBullet = false;
+			for (int n = 0; n < bulletMgr.vecBullet.size(); n++) {
+				if (bulletMgr.vecBullet[n].nRow==i&& bulletMgr.vecBullet[n].nCol==j) {
+					bDrawBullet = true;
+				}
+			}
 			
 			if (arrMap[i][j] == 0) {
 				cout << "¿Ú";
@@ -97,7 +107,7 @@ void SGameMap::render()
 			else if (bDrawPlayer) {
 				cout << "»ú";
 			}
-			else if (i==bulletMgr.bullet.nRow&&j== bulletMgr.bullet.nCol) {
+			else if (bDrawBullet) {
 				cout << "µ¯";
 			}
 			else if (arrMap[i][j] == 1) {
