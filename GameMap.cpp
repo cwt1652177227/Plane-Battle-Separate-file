@@ -73,6 +73,9 @@ void SGameMap::update()
 	{
 		bulletMgr.addBullet(player.nRow, player.nCol);
 	}
+
+	bulletMgr.update();
+	
 	
 }
 
